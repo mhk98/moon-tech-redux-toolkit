@@ -1,6 +1,6 @@
 import React from "react";
 import { BiListPlus } from "react-icons/bi";
-import { addToCart } from "../features/cart/cartSlice";
+import { addToCart, removeFromCart } from "../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { MdDeleteForever } from "react-icons/md";
@@ -35,9 +35,9 @@ const ProductCard = ({ product }) => {
         {pathname.includes("cart") && (
           <button
             className="bg-indigo-500 rounded-full py-1 px-2 flex-1 text-white text-bold"
-            // onClick={() => dispatch(removeFromCart(product))}
+            onClick={() => dispatch(removeFromCart(product))}
           >
-            <MdDeleteForever /> Delete
+            <MdDeleteForever /> Remove
           </button>
         )}
         {!pathname.includes("cart") && (
