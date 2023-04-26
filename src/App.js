@@ -3,10 +3,12 @@ import { RouterProvider } from "react-router-dom";
 // import store from "./redux/store";
 import routes from "./routes/routes";
 import store from "./app/store";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <div>
+      <Toaster></Toaster>
       <Provider store={store}>
         <RouterProvider router={routes} />
       </Provider>
